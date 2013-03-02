@@ -1,4 +1,13 @@
 <?php
+/**
+ * Fuel RSS package
+ *
+ * @package    Fuel
+ * @subpackage RSS
+ * @version    1.0
+ * @author     Márk Ság-Kazár
+ * @link       https://github.com/sagikazarmark/fuel-rss
+ */
 
 namespace RSS;
 
@@ -15,11 +24,11 @@ class RSS
 	 * @var array
 	 */
 	protected static $_defaults = array(
-		'driver' => 'lastrss',
-		'limit' => 5,
+		'driver'      => 'lastrss',
+		'limit'       => 5,
 		'date_format' => 'Y-m-d H:i',
-		'path' => 'lastRSS.php',
-		'class' => 'lastRSS'
+		'path'        => 'lastRSS.php',
+		'class'       => 'lastRSS'
 	);
 
 

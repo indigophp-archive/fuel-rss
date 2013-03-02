@@ -1,4 +1,13 @@
 <?php
+/**
+ * Fuel RSS package
+ *
+ * @package    Fuel
+ * @subpackage RSS
+ * @version    1.0
+ * @author     Márk Ság-Kazár
+ * @link       https://github.com/sagikazarmark/fuel-rss
+ */
 
 namespace RSS;
 
