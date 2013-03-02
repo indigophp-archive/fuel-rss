@@ -8,9 +8,12 @@ class RSS
 	/**
 	 * Instance for singleton usage.
 	 */
-	public static $_instance = false;
+	protected static $_instance = false;
 
-
+	/**
+	 * Default config values
+	 * @var array
+	 */
 	protected static $_defaults = array(
 		'driver' => 'lastrss',
 		'limit' => 5,
