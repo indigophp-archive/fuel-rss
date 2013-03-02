@@ -11,6 +11,15 @@ class RSS
 	public static $_instance = false;
 
 
+	protected static $_defaults = array(
+		'driver' => 'lastrss',
+		'limit' => 5,
+		'date_format' => 'Y-m-d H:i',
+		'path' => 'lastRSS.php',
+		'class' => 'lastRSS'
+	);
+
+
 	/**
 	 * RSS driver forge.
 	 *
@@ -23,6 +32,7 @@ class RSS
 		empty($setup) and $setup = \Config::get('rss.default_setup', 'default');
 		is_string($setup) and $setup = \Config::get('rss.setups.'.$setup, array());
 
+		$setup = \Arr::merge(static::$_defaults, $setup);
 		$config = \Arr::merge($setup, $config);
 
 		$driver = '\\RSS_Driver_'.ucfirst(strtolower(\Arr::get($config, 'driver', 'lastrss')));
