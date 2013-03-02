@@ -5,7 +5,7 @@
  * @package    Fuel
  * @subpackage RSS
  * @version    1.0
- * @author     Márk Ság-Kazár
+ * @author     Márk Ság-Kazár <sagikazarmark@gmail.com>
  * @link       https://github.com/sagikazarmark/fuel-rss
  */
 
