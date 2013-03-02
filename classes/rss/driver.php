@@ -33,7 +33,6 @@ abstract class RSS_Driver
 	{
 		$this->config = $config;
 		include_once(realpath(PKGPATH.'/rss/vendor/'.$config['path']));
-		$this->init();
 	}
 
 	/**
@@ -55,9 +54,6 @@ abstract class RSS_Driver
 	{
 		return !empty($date_format) and is_string($date_format) and $this->set_config('date_format', $date_format);
 	}
-
-
-	abstract protected function init();
 
 	/**
 	 * Abstract class for RSS feed fownload
