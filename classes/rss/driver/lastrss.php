@@ -11,7 +11,7 @@
 
 namespace RSS;
 
-class RSS_Driver_Lastrss extends \RSS_Driver
+class RSS_Driver_Lastrss extends RSS_Driver
 {
 
 	public function __construct(array $config)
