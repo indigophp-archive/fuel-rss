@@ -57,12 +57,27 @@ abstract class RSS_Driver
 		return $this;
 	}
 
+	public function get($url)
+	{
+		$rss = $this->_get($url);
+		$rss = $this->_order($rss);
+
+		return $rss;
+	}
+
 	/**
 	 * Abstract class for RSS feed fownload
 	 * @param  string $url URL of RSS feed
 	 * @return mixed
 	 */
-	abstract public function get($url);
+	abstract protected function _get($url);
+
+	/**
+	 * Order the resultset
+	 * @param mixed $rss The returned result
+	 * @return bool
+	 */
+	abstract protected function _order($rss = null);
 
 	/**
 	 * Get a driver config setting.

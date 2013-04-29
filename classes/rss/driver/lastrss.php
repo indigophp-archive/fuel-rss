@@ -28,12 +28,23 @@ class RSS_Driver_Lastrss extends RSS_Driver
 		return $this;
 	}
 
-	public function get($url)
+	protected function _get($url)
 	{
 		$this->instance->items_limit = $this->get_config('limit', 0);
 		//$this->instance->date_format = $this->get_config('date_format', 0);
 		$this->instance->cache_dir = \Config::get('cache_dir');
 		$this->instance->cache_time = 3600;
+
 		return $this->instance->Get($url);
+	}
+
+	protected function _order($rss = null)
+	{
+		if ( ! is_null($rss) and $order = $this->get_config('order', false))
+		{
+			!is_array($order) && $order = array($order);
+			$rss['items'] = \Arr::sort($rss['items'], \Arr::get($order, 0, 'pubDate'), \Str::lower(\Arr::get($order, 1, 'asc')));
+		}
+		return $rss;
 	}
 }
