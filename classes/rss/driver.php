@@ -38,21 +38,23 @@ abstract class RSS_Driver
 	/**
 	 * Set the max number of items
 	 * @param  int|null $limit Max number of items
-	 * @return bool
+	 * @return $this
 	 */
 	public function limit($limit = 0)
 	{
-		 return is_int($limit) and $limit > -1 and $this->set_config('limit', $limit);
+		is_int($limit) and $limit > -1 and $this->set_config('limit', $limit);
+		return $this;
 	}
 
 	/**
 	 * Set date format
 	 * @param  string|null $date_format Date format, e.g. 'Y-m-d H:i'
-	 * @return bool
+	 * @return $this
 	 */
 	public function date_format($date_format = 'Y-m-d H:i')
 	{
-		return !empty($date_format) and is_string($date_format) and $this->set_config('date_format', $date_format);
+		!empty($date_format) and is_string($date_format) and $this->set_config('date_format', $date_format);
+		return $this;
 	}
 
 	/**

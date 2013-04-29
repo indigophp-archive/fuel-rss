@@ -17,7 +17,7 @@ class RSS_Driver_Lastrss extends RSS_Driver
 	public function __construct(array $config)
 	{
 		parent::__construct($config);
-		
+
 		$class = $this->get_config('class', 'stdclass');
 		$this->instance = new $class;
 
